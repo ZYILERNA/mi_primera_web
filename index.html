@@ -12,13 +12,15 @@
   <header>
     <h1>Panadería Artesanal</h1>
     <p>El sabor de lo hecho a mano 🥖</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="herramientas.html">Herramientas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+      <nav class="navbar">
+        <a href="#" class="logo">🍞</a>
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+      </nav>
   </header>
 
   <main>
@@ -62,6 +64,12 @@
   <footer>
     <small>&copy; 2025 · Panadería Artesanal</small>
   </footer>
-
+      <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('abierto');
+        });
+      </script>
 </body>
 </html>

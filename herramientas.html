@@ -10,13 +10,15 @@
 <body>
   <header>
     <h1>Herramientas de Panadería</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="herramientas.html">Herramientas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+      <nav class="navbar">
+        <a href="#" class="logo">🍞</a>
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+      </nav>
   </header>
 
   <section class="hero">
@@ -45,5 +47,12 @@
   <footer>
     <p>&copy; 2025 Herramientas de Panadería</p>
   </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('abierto');
+    });
+  </script>
 </body>
 </html>

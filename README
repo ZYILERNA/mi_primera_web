@@ -1,1 +1,9 @@
-README
+## Estrategia elegida
+Hemos usado una estrategia Mobile First porque permite optimizar la experiencia de usuario en dispositivos móviles, que son los más utilizados actualmente. 
+Los estilos base están pensados para pantallas pequeñas, y usamos media queries para ampliar el diseño a tabletas y escritorio.
+
+## Estrategias adaptativas implementadas
+
+1. **Menú hamburguesa en móviles:** El menú de navegación se oculta tras un icono ☰ y se despliega al hacer clic.
+2. **Diseño flexible de columnas:** En escritorio, la sección de contacto muestra el formulario y la información uno al lado del otro; en móvil, en una sola columna.
+3. **Reorganización y ajuste visual:** Las tarjetas de producto se ajustan de 100% ancho en móvil a 45% o 30% en tablet y escritorio, manteniendo coherencia y legibilidad.
