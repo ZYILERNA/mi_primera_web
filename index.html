@@ -12,47 +12,52 @@
   <header>
     <h1>Panadería Artesanal</h1>
     <p>El sabor de lo hecho a mano 🥖</p>
-      <nav class="navbar">
-        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-        <ul class="menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="herramientas.html">Herramientas</a></li>
-          <li><a href="contacto.html" class="activo">Contacto</a></li>
-        </ul>
-      </nav>
+
+    <nav class="navbar">
+      <a href="#" class="logo">🍞</a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="herramienta.html">Herramientas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
     <article>
       <h2>Sobre nuestra panadería</h2>
-      <p>Bienvenido a nuestra web. Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño. Aquí podrás descubrir nuestros productos más populares.</p>
+      <p>Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño.</p>
     </article>
 
     <section class="tarjetas">
       <div class="tarjeta">
         <div class="tarjeta-img">
-             <img src="https://lh6.googleusercontent.com/proxy/-P8e4Jciil4UYE8zWl6rPs6-geRcL0XzyEI_yp77Nkpt97ON2uffnwMrN-qg-9DzzXIXAaVMfFg3xjQF4XjLWL2T8XhbufFqDma5I97xcv0cvpfulmGBtaUm">
+          <img src="https://lh6.googleusercontent.com/proxy/-P8e4Jciil4UYE8zWl6rPs6-geRcL0XzyEI_yp77Nkpt97ON2uffnwMrN-qg-9DzzXIXAaVMfFg3xjQF4XjLWL2T8XhbufFqDma5I97xcv0cvpfulmGBtaUm" alt="Pan tradicional">
         </div>
         <h3>Pan Tradicional</h3>
         <p>Crujiente por fuera, esponjoso por dentro.</p>
       </div>
+
       <div class="tarjeta">
         <div class="tarjeta-img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSQE0OwmT2J3cRPW3dOtuO_nkb0m5eCtLSoA&s">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSQE0OwmT2J3cRPW3dOtuO_nkb0m5eCtLSoA&s" alt="Pasteles">
         </div>
         <h3>Pasteles</h3>
         <p>Dulces artesanales para cada ocasión.</p>
       </div>
+
       <div class="tarjeta">
         <div class="tarjeta-img">
-            <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxErovL99jf4HqytJCBOb1BbS3quz3kR5jDg&s">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxErovL99jf4HqytJCBOb1BbS3quz3kR5jDg&s" alt="Café y desayunos">
         </div>
         <h3>Café & Desayunos</h3>
         <p>Acompaña tu pan con un café recién hecho.</p>
       </div>
+
       <div class="tarjeta">
         <div class="tarjeta-img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7aCfSXrzFfI0H-1B1sKrXiRU6IK6RIrkugA&s">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7aCfSXrzFfI0H-1B1sKrXiRU6IK6RIrkugA&s" alt="Bollería">
         </div>
         <h3>Bollería</h3>
         <p>Croissants, napolitanas y mucho más.</p>
@@ -63,12 +68,13 @@
   <footer>
     <small>&copy; 2025 · Panadería Artesanal</small>
   </footer>
-      <script>
-        const toggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('abierto');
-        });
-      </script>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('abierto');
+    });
+  </script>
 </body>
 </html>
