@@ -4,75 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panadería Artesanal</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Panadería Artesanal</h1>
-    <p>El sabor de lo hecho a mano 🥖</p>
-    <nav class="navbar">
-      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-      <ul class="menu">
-        <li><a href="index.html" class="activo">Inicio</a></li>
-        <li><a href="herramientas.html">Herramientas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+  <!-- Header con imagen de fondo (EJERCICIO 6.2) -->
+  <header class="header-bg">
+    <div class="container text-center">
+      <h1 class="display-3">Panadería Artesanal</h1>
+      <p class="lead">El sabor de lo hecho a mano 🥖</p>
+    </div>
   </header>
 
-  <main>
-    <article>
-      <h2>Sobre nuestra panadería</h2>
-      <p>Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño.</p>
+  <!-- Navbar Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="herramientas.html">Herramientas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    
+    <!-- Sección About -->
+    <article class="text-center mb-5">
+      <h2 class="mb-3">Sobre nuestra panadería</h2>
+      <p class="lead">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño.</p>
     </article>
 
-    <section class="tarjetas">
-      <div class="tarjeta">
-        <div class="tarjeta-img">
-          <img src="https://lh6.googleusercontent.com/proxy/-P8e4Jciil4UYE8zWl6rPs6-geRcL0XzyEI_yp77Nkpt97ON2uffnwMrN-qg-9DzzXIXAaVMfFg3xjQF4XjLWL2T8XhbufFqDma5I97xcv0cvpfulmGBtaUm" alt="Pan tradicional">
+    <!-- EJERCICIO 6.3: Imagen adaptativa con <picture> -->
+    <!-- Imágenes optimizadas:
+         - Móvil (≤480px): 480x320px (~50KB)
+         - Tablet (≤768px): 768x512px (~120KB)
+         - Desktop (>768px): 1200x800px (~250KB) -->
+    <div class="imagen-destacada">
+      <picture>
+        <!-- Imagen para móvil (menor resolución) -->
+        <source 
+          media="(max-width: 480px)" 
+          srcset="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=480&h=320&fit=crop&q=80">
+        
+        <!-- Imagen para tablet (resolución media) -->
+        <source 
+          media="(max-width: 768px)" 
+          srcset="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=768&h=512&fit=crop&q=85">
+        
+        <!-- Imagen por defecto para desktop (alta resolución) -->
+        <img 
+          src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&h=800&fit=crop&q=90" 
+          alt="Pan artesanal recién horneado en nuestra panadería"
+          class="img-fluid"
+          loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Tarjetas de productos con Bootstrap Grid -->
+    <section class="row g-4 mt-4">
+      
+      <!-- Tarjeta 1: Pan Tradicional -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=400&h=300&fit=crop" 
+               class="card-img-top" 
+               alt="Pan tradicional crujiente"
+               loading="lazy">
+          <div class="card-body text-center">
+            <h3 class="card-title h5">Pan Tradicional</h3>
+            <p class="card-text">Crujiente por fuera, esponjoso por dentro.</p>
+          </div>
         </div>
-        <h3>Pan Tradicional</h3>
-        <p>Crujiente por fuera, esponjoso por dentro.</p>
       </div>
 
-      <div class="tarjeta">
-        <div class="tarjeta-img">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSQE0OwmT2J3cRPW3dOtuO_nkb0m5eCtLSoA&s" alt="Pasteles">
+      <!-- Tarjeta 2: Pasteles -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" 
+               class="card-img-top" 
+               alt="Pasteles artesanales decorados"
+               loading="lazy">
+          <div class="card-body text-center">
+            <h3 class="card-title h5">Pasteles</h3>
+            <p class="card-text">Dulces artesanales para cada ocasión.</p>
+          </div>
         </div>
-        <h3>Pasteles</h3>
-        <p>Dulces artesanales para cada ocasión.</p>
       </div>
 
-      <div class="tarjeta">
-        <div class="tarjeta-img">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxErovL99jf4HqytJCBOb1BbS3quz3kR5jDg&s" alt="Café y desayunos">
+      <!-- Tarjeta 3: Café & Desayunos -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop" 
+               class="card-img-top" 
+               alt="Café recién hecho con desayuno"
+               loading="lazy">
+          <div class="card-body text-center">
+            <h3 class="card-title h5">Café & Desayunos</h3>
+            <p class="card-text">Acompaña tu pan con un café recién hecho.</p>
+          </div>
         </div>
-        <h3>Café & Desayunos</h3>
-        <p>Acompaña tu pan con un café recién hecho.</p>
       </div>
 
-      <div class="tarjeta">
-        <div class="tarjeta-img">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7aCfSXrzFfI0H-1B1sKrXiRU6IK6RIrkugA&s" alt="Bollería">
+      <!-- Tarjeta 4: Bollería -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop" 
+               class="card-img-top" 
+               alt="Bollería variada y croissants"
+               loading="lazy">
+          <div class="card-body text-center">
+            <h3 class="card-title h5">Bollería</h3>
+            <p class="card-text">Croissants, napolitanas y mucho más.</p>
+          </div>
         </div>
-        <h3>Bollería</h3>
-        <p>Croissants, napolitanas y mucho más.</p>
       </div>
+
     </section>
+
   </main>
 
-  <footer>
-    <small>&copy; 2025 · Panadería Artesanal</small>
+  <!-- Footer mejorado -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row py-4">
+        
+        <!-- Columna 1: Sobre nosotros -->
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3">🥖 Panadería Artesanal</h5>
+          <p class="small">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño desde 1995.</p>
+          <div class="social-links">
+            <a href="#" class="me-3" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#" class="me-3" aria-label="Instagram"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i> Twitter</a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Enlaces rápidos -->
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="footer-link">🏠 Inicio</a></li>
+            <li class="mb-2"><a href="herramientas.html" class="footer-link">🔧 Herramientas</a></li>
+            <li class="mb-2"><a href="contacto.html" class="footer-link">📧 Contacto</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">📋 Menú del día</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">🎂 Encargos especiales</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Contacto -->
+        <div class="col-12 col-md-4">
+          <h5 class="fw-bold mb-3">Contacto</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2">📍 Calle del Pan, 12 – Madrid</li>
+            <li class="mb-2">📞 <a href="tel:+34912345678" class="footer-link">912 345 678</a></li>
+            <li class="mb-2">✉️ <a href="mailto:contacto@panaderiaartesanal.com" class="footer-link">contacto@panaderiaartesanal.com</a></li>
+            <li class="mb-2">🕐 Lun-Sáb: 7:00 - 20:00</li>
+            <li class="mb-2">🕐 Dom: 8:00 - 14:00</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Línea divisora -->
+      <hr class="border-light opacity-25">
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col-12 text-center py-3">
+          <small>&copy; 2025 Panadería Artesanal · Todos los derechos reservados · <a href="#" class="footer-link">Política de privacidad</a> · <a href="#" class="footer-link">Términos y condiciones</a></small>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('abierto');
-    });
-  </script>
+  <!-- Bootstrap JS Bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
