@@ -7,113 +7,199 @@ body {
   color: #4a3f35;
 }
 
-/* Encabezado */
-header {
-  background: #d97706;
+/* ===================== EJERCICIO 6.1 ===================== */
+/* Regla global para que imágenes y vídeos se escalen correctamente */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* ========================================================== */
+
+/* ===================== EJERCICIO 6.2 ===================== */
+/* Imagen decorativa de fondo en el header */
+/* NOTA: Ahora aplicada a la clase .header-bg de Bootstrap */
+.header-bg {
+  background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
-  padding: 2rem;
-  text-align: center;
+  padding: 3rem 0;
+  position: relative;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+/* EXPERIMENTACIÓN:
+   - contain: Mantiene la imagen completa visible, puede dejar espacios vacíos.
+              Útil cuando quieres ver toda la imagen sin recortes.
+   
+   - cover: La imagen cubre todo el contenedor, puede recortarse.
+            Útil para fondos donde importa llenar el espacio sin huecos.
+   
+   - 100% 100%: Estira la imagen para llenar el contenedor completamente.
+                Puede distorsionar la imagen si las proporciones no coinciden.
+
+   ELECCIÓN: He elegido "cover" porque:
+   1. Garantiza que no haya espacios vacíos en el contenedor
+   2. Mantiene la proporción de la imagen (no se distorsiona)
+   3. Para una imagen decorativa de fondo, es más importante que 
+      llene el espacio que ver cada detalle de la imagen
+   4. Crea un efecto visual más limpio y profesional
+*/
+
+/* Overlay para mejorar legibilidad del texto sobre la imagen */
+.header-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(217, 119, 6, 0.85);
+  z-index: 0;
 }
 
-header p {
-  margin-bottom: 1rem;
+.header-bg > * {
+  position: relative;
+  z-index: 1;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #d97706;
-  padding: 1rem 2rem;
+.header-bg h1 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+/* ========================================================== */
+
+/* ===================== EJERCICIO 6.3 ===================== */
+/* Contenedor para imagen adaptativa con <picture> */
+/* DECISIÓN: He elegido la etiqueta <picture> porque:
+   - Permite cargar imágenes optimizadas según el dispositivo
+   - Reduce el consumo de datos en móviles (imágenes más ligeras)
+   - Mejora el rendimiento y tiempo de carga
+   - Es más semántica y moderna que las media queries en CSS
+   - El navegador elige automáticamente la mejor imagen
+   
+   Ventajas sobre media queries CSS:
+   - Media queries CSS cargarían todas las imágenes y solo mostrarían una
+   - <picture> solo descarga la imagen necesaria, ahorrando ancho de banda
+   - Mejor para SEO y accesibilidad
+   
+   Imágenes optimizadas por resolución:
+   - Móvil (max-width: 480px): 480x320px - aproximadamente 50KB
+   - Tablet (max-width: 768px): 768x512px - aproximadamente 120KB  
+   - Desktop (769px+): 1200x800px - aproximadamente 250KB
+*/
+.imagen-destacada {
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
 
-.menu {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  background: #fef3c7;
-  padding: 1rem;
-  border-radius: 8px;
+.imagen-destacada img {
+  border-radius: 12px;
+  width: 100%;
+}
+/* ========================================================== */
+
+/* Personalización de Navbar Bootstrap */
+.navbar-custom {
+  background: rgba(217, 119, 6, 0.95) !important;
 }
 
-.menu li {
-  list-style: none;
-  text-align: center;
-}
-
-.menu a {
-  color: #78350f;
-  text-decoration: none;
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white !important;
   font-weight: 600;
 }
 
-.menu.abierto {
-  display: flex;
+.navbar-custom .nav-link:hover {
+  color: #fef3c7 !important;
 }
 
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+.navbar-toggler {
+  border-color: white;
 }
 
-/* Contenido principal */
-main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Tarjetas */
-.tarjetas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.tarjeta {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 280px;
+/* Personalización de Cards Bootstrap */
+.card {
   transition: transform 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
 }
 
-.tarjeta:hover {
+.card:hover {
   transform: scale(1.05);
 }
 
-.tarjeta-img img {
-  width: 100%;
-  height: 160px;
+.card-img-top {
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 12px 12px 0 0;
 }
 
-/* Contacto */
-.contacto-info {
-  margin-top: 2rem;
+/* Footer personalizado mejorado */
+.footer-custom {
+  background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+  color: #f9fafb;
+  padding: 0;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.footer-custom h5 {
+  color: #fbbf24;
+  border-bottom: 2px solid #fbbf24;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: #fef3c7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
+.social-links a {
+  color: #fef3c7;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-links a:hover {
+  color: #fbbf24;
+  transform: translateY(-2px);
+}
+
+.footer-custom hr {
+  margin: 0;
+}
+
+.footer-custom .small,
+.footer-custom small {
+  color: #fde68a;
+}
+
+/* Estilos para formulario de contacto (si es necesario) */
 .formulario input,
 .formulario textarea,
 .formulario button {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 .formulario button {
@@ -121,63 +207,28 @@ main {
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
   font-weight: bold;
 }
 
-footer {
-  background: #78350f;
-  color: #f9fafb;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+.formulario button:hover {
+  background: #b45309;
 }
 
 /* ------------------------- */
-/* MEDIA QUERIES */
+/* MEDIA QUERIES PERSONALIZADAS */
+/* (Bootstrap ya maneja la mayoría, pero puedes añadir ajustes específicos) */
 /* ------------------------- */
 
 /* TABLET (481px a 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .tarjeta {
-    width: 45%;
-  }
-
-  .contacto-info {
-    display: flex;
-    flex-direction: column;
+  .header-bg h1 {
+    font-size: 2rem;
   }
 }
 
 /* ESCRITORIO (769px en adelante) */
 @media (min-width: 769px) {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    background: none;
-    padding: 0;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .navbar {
-    justify-content: center;
-  }
-
-  .contacto-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .formulario, .info-extra {
-    width: 48%;
-  }
-
-  .tarjeta {
-    width: 300px;
+  .header-bg h1 {
+    font-size: 3rem;
   }
 }
