@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Panadería Artesanal</title>
+  <title>Audio - Panadería Artesanal</title>
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -40,137 +41,168 @@
             <a class="nav-link" href="herramientas.html" id="nav-herramientas">Herramientas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="audio.html" id="nav-audio">Audio</a>
+            <a class="nav-link active" href="audio.html" id="nav-audio">Audio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="contacto.html" id="nav-contacto">Contacto</a>
+            <a class="nav-link" href="contacto.html" id="nav-contacto">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-
   <main class="container my-5">
+    <section class="audio-section">
+      <div class="container">
+        <h2 id="audio-titulo">Nuestra Historia</h2>
+        <p id="audio-desc">Escucha la historia de nuestra panadería y descubre el secreto de nuestro pan artesanal</p>
+        
+        <div class="custom-audio-player">
+          <audio id="audioPlayer">  
+            <source src="../audio/panmp3.mp3" type="audio/mpeg">
+            <source src="../audio/panogg.ogg" type="audio/ogg">
+            Tu navegador no soporta el elemento de audio.
+          </audio>  
+          
+          <div class="player-controls">
+            <button id="playPauseBtn" class="control-btn">
+              <i class="fas fa-play"></i>
+            </button>
+            <div class="progress-container">
+              <div class="time-display"><span id="currentTime">0:00</span></div>
+              <input type="range" id="progressBar" class="progress-bar" value="0" min="0" max="100" step="0.1">
+              <div class="time-display"><span id="duration">0:00</span></div>
+            </div>
+            <div class="volume-container">
+              <button id="muteBtn" class="control-btn"><i class="fas fa-volume-up"></i></button>
+              <input type="range" id="volumeBar" class="volume-bar" value="100" min="0" max="100">
+            </div>
+          </div>
+          
+          <div class="track-info">
+            <p class="track-title" id="track-title">Historia de Panadería Artesanal</p>
+            <p class="track-artist" id="track-artist">Tradición y pasión desde 1995</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row py-4">
+        
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3" id="footer-col1-titulo">🥖 Panadería Artesanal</h5>
+          <p class="small" id="footer-desc">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño desde 1995.</p>
+          <div class="social-links">
+            <a href="#" class="me-3"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#" class="me-3"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3" id="footer-enlaces-titulo">Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="footer-link" id="footer-link-inicio">🏠 Inicio</a></li>
+            <li class="mb-2"><a href="herramientas.html" class="footer-link" id="footer-link-herramientas">🔧 Herramientas</a></li>
+            <li class="mb-2"><a href="audio.html" class="footer-link" id="footer-link-audio">🎵 Audio</a></li>
+            <li class="mb-2"><a href="contacto.html" class="footer-link" id="footer-link-contacto">📧 Contacto</a></li>
+            <li class="mb-2"><a href="#" class="footer-link" id="footer-menu">📋 Menú del día</a></li>
+            <li class="mb-2"><a href="#" class="footer-link" id="footer-encargos">🎂 Encargos especiales</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h5 class="fw-bold mb-3" id="footer-contacto-titulo">Contacto</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2" id="footer-direccion">📍 Calle del Pan, 12 – Madrid</li>
+            <li class="mb-2">📞 912 345 678</li>
+            <li class="mb-2">✉️ contacto@panaderiaartesanal.com</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="border-light opacity-25">
+
+      <div class="row">
+        <div class="col-12 text-center py-3">
+          <small id="footer-copyright">&copy; 2025 Panadería Artesanal</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const volumeBar = document.getElementById('volumeBar');
+    const muteBtn = document.getElementById('muteBtn');
+    const currentTimeDisplay = document.getElementById('currentTime');
+    const durationDisplay = document.getElementById('duration');
     
-    <div class="text-center mb-5">
-      <h2 id="contact-main-title" class="display-5 mb-3">Contáctanos</h2>
-      <p id="contact-main-desc" class="lead">Si tienes alguna duda, encargo o sugerencia, completa el formulario o visítanos en nuestra tienda.</p>
-    </div>
+    playPauseBtn.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+    
+    audio.addEventListener('timeupdate', function() {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      progressBar.value = progress;
+      currentTimeDisplay.textContent = formatTime(audio.currentTime);
+    });
+    
+    progressBar.addEventListener('input', function() {
+      const time = (progressBar.value / 100) * audio.duration;
+      audio.currentTime = time;
+    });
+    
+    audio.addEventListener('loadedmetadata', function() {
+      durationDisplay.textContent = formatTime(audio.duration);
+    });
+    
+    volumeBar.addEventListener('input', function() {
+      audio.volume = volumeBar.value / 100;
+      updateVolumeIcon();
+    });
+    
+    muteBtn.addEventListener('click', function() {
+      audio.muted = !audio.muted;
+      updateVolumeIcon();
+    });
+    
+    function updateVolumeIcon() {
+      const icon = muteBtn.querySelector('i');
+      if (audio.muted || audio.volume === 0) {
+        icon.className = 'fas fa-volume-mute';
+      } else if (audio.volume < 0.5) {
+        icon.className = 'fas fa-volume-down';
+      } else {
+        icon.className = 'fas fa-volume-up';
+      }
+    }
+    
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+  });
+  </script>
 
-    <div class="row g-4 mb-5">
-      
-      <div class="col-12 col-lg-6">
-        <div class="card shadow-sm">
-          <div class="card-body p-4">
-            <h3 id="form-title" class="card-title mb-4">📝 Formulario de Contacto</h3>
-            <form>
-              
-              <div class="mb-3">
-                <label id="label-nombre" for="nombre" class="form-label fw-semibold">Nombre completo</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
-              </div>
+  <script src="script.js"></script>
 
-              <div class="mb-3">
-                <label id="label-email" for="email" class="form-label fw-semibold">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>
-              </div>
-
-              <div class="mb-3">
-                <label id="label-telefono" for="telefono" class="form-label fw-semibold">Teléfono (opcional)</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+34 912 345 678">
-              </div>
-
-              <div class="mb-3">
-                <label id="label-asunto" for="asunto" class="form-label fw-semibold">Asunto</label>
-                <select class="form-select" id="asunto" name="asunto" required>
-                  <option id="opt-default" value="">Selecciona un asunto</option>
-                  <option id="opt-consulta" value="consulta">Consulta general</option>
-                  <option id="opt-pedido" value="pedido">Pedido especial</option>
-                  <option id="opt-sugerencia" value="sugerencia">Sugerencia</option>
-                  <option id="opt-reclamo" value="reclamo">Reclamo</option>
-                </select>
-              </div>
-
-              <div class="mb-4">
-                <label id="label-mensaje" for="mensaje" class="form-label fw-semibold">Mensaje</label>
-                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-              </div>
-
-              <button id="btn-enviar" type="submit" class="btn btn-lg w-100" style="background: #d97706; color: white; font-weight: 600;">
-                Enviar Mensaje ✉️
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-lg-6">
-        <div class="card shadow-sm mb-4">
-          <div class="card-body p-4">
-            <h3 id="info-title" class="card-title mb-4">📍 Información de Contacto</h3>
-            
-            <div class="mb-3">
-              <h5 id="info-addr-title" class="mb-2"><strong>Dirección</strong></h5>
-              <p id="info-addr-1" class="text-muted mb-0">📍 Calle del Pan, 12</p>
-              <p id="info-addr-2" class="text-muted">28001 Madrid, España</p>
-            </div>
-
-            <div class="mb-3">
-              <h5 id="info-phone-title" class="mb-2"><strong>Teléfono</strong></h5>
-              <p class="text-muted mb-0">📞 <a href="tel:+34912345678" class="text-decoration-none">912 345 678</a></p>
-            </div>
-
-            <div class="mb-3">
-              <h5 class="mb-2"><strong>Email</strong></h5>
-              <p class="text-muted mb-0">✉️ <a href="mailto:contacto@panaderiaartesanal.com" class="text-decoration-none">contacto@panaderiaartesanal.com</a></p>
-            </div>
-
-            <div class="mb-3">
-              <h5 id="info-horario-title" class="mb-2"><strong>Horario</strong></h5>
-              <p id="info-horario-week" class="text-muted mb-1">🕐 Lunes a Sábado: 7:00 - 20:00</p>
-              <p id="info-horario-sun" class="text-muted mb-0">🕐 Domingo: 8:00 - 14:00</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card shadow-sm">
-          <div class="card-body p-0">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.7331749973125!2d-3.703790684606787!3d40.41677597936432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422887c9f1b6c1%3A0xe53a03b7b6b5c9c0!2sMadrid!5e0!3m2!1ses!2ses!4v1716200000000!5m2!1ses!2ses"
-              width="100%"
-              height="300"
-              style="border:0; border-radius: 0.375rem;"
-              allowfullscreen=""
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <section class="mt-5">
-      <div class="text-center mb-4">
-        <h3 id="products-title" class="display-6">🥖 Nuestros Productos Más Populares</h3>
-        <p id="products-subtitle" class="text-muted">Precios actualizados para 2025</p>
-      </div>
-
-      <div class="table-responsive">
-        <table class="table table-hover table-striped align-middle">
-          <caption class="text-center">Lista de panes y sus precios</caption>
-          <thead class="table-dark">
-            <tr>
-              <th scope="col" class="ps-4">#</th>
-              <th id="th-producto" scope="col">Producto</th>
-              <th id="th-descripcion" scope="col">Descripción</th>
-              <th id="th-precio" scope="col" class="text-end pe-4">Precio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" class="ps-4">1</th>
-              <td><strong id="prod-1-name">Pan Tradicional</strong></td>
-              <td id="prod-1-desc">Barra de pan clásico de 250g</td>
-              <td class="text-end pe-4"><span class="badge bg-success">1.20 €</span></td>
-            </tr>
+</body>
+</html>
