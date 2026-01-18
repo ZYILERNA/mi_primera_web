@@ -12,10 +12,16 @@
 </head>
 <body>
 
-  <header class="header-bg">
-    <div class="container text-center">
-      <h1 class="display-3">Panadería Artesanal</h1>
-      <p class="lead">El sabor de lo hecho a mano 🥖</p>
+  <header class="header-bg position-relative">
+    <div id="selector-idiomas" class="position-absolute top-0 end-0 p-3">
+        <button class="btn btn-light btn-sm" data-lang="ca">CA</button>
+        <button class="btn btn-light btn-sm" data-lang="es">ES</button>
+        <button class="btn btn-light btn-sm" data-lang="en">EN</button>
+    </div>
+
+    <div class="container text-center pt-5">
+      <h1 id="titulo-principal" class="display-3">Panadería Artesanal</h1>
+      <p id="mensaje-bienvenida" class="lead">El sabor de lo hecho a mano 🥖</p>
     </div>
   </header>
 
@@ -28,67 +34,105 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html" id="nav-inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="herramientas.html">Herramientas</a>
+            <a class="nav-link" href="herramientas.html" id="nav-herramientas">Herramientas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="audio.html">Audio</a>
+            <a class="nav-link active" href="audio.html" id="nav-audio">Audio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
+            <a class="nav-link" href="contacto.html" id="nav-contacto">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HEADER / HERO -->
-  <header class="header-bg">
-    <div class="container text-center">
-      <h1 class="display-3">Herramientas de Panadería</h1>
-      <p class="lead">Equipamiento profesional para panaderos artesanales 🔧</p>
-    </div>
-  </header>
+  <main class="container my-5 text-center">
+    
+    <h2 id="audio-page-title" class="mb-5">Comparación de imágenes</h2>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 mb-4">
+        <p id="label-img-orig" class="fw-bold">Imagen original (sin optimizar)</p>
+        <div class="border p-2 bg-light">
+           <img src="../imagenes/pan2.jpg" alt="Original" class="img-fluid shadow-sm">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-4">
+        <p id="label-img-opt" class="fw-bold">Imagen optimizada (PNG-8)</p>
+        <div class="border p-2 bg-light">
+           <img src="../imagenes/pan1final.png" alt="Optimizada" class="img-fluid shadow-sm">
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 bg-light rounded">
+        <h3 id="audio-player-title">🎧 Nuestro Podcast</h3>
+        <p id="audio-player-desc">Escucha cómo elaboramos nuestro pan.</p>
+        <audio controls class="w-100 mt-2">
+            <source src="../audio/panaderia.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+  </main>
+
+  <footer class="footer-custom">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Abrir menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="row py-4">
+        
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3" id="footer-col1-titulo">🥖 Panadería Artesanal</h5>
+          <p class="small" id="footer-desc">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño desde 1995.</p>
+          <div class="social-links">
+            <a href="#" class="me-3"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#" class="me-3"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+          </div>
+        </div>
 
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="herramientas.html">Herramientas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-        </ul>
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3" id="footer-enlaces-titulo">Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="footer-link" id="footer-link-inicio">🏠 Inicio</a></li>
+            <li class="mb-2"><a href="herramientas.html" class="footer-link" id="footer-link-herramientas">🔧 Herramientas</a></li>
+            <li class="mb-2"><a href="audio.html" class="footer-link" id="footer-link-audio">🎵 Audio</a></li>
+            <li class="mb-2"><a href="contacto.html" class="footer-link" id="footer-link-contacto">📧 Contacto</a></li>
+            <li class="mb-2"><a href="#" class="footer-link" id="footer-menu">📋 Menú del día</a></li>
+            <li class="mb-2"><a href="#" class="footer-link" id="footer-encargos">🎂 Encargos especiales</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h5 class="fw-bold mb-3" id="footer-contacto-titulo">Contacto</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2" id="footer-direccion">📍 Calle del Pan, 12 – Madrid</li>
+            <li class="mb-2">📞 912 345 678</li>
+            <li class="mb-2">✉️ contacto@panaderiaartesanal.com</li>
+            <li class="mb-2">🕐 Lun-Sáb: 7:00 - 20:00</li>
+            <li class="mb-2">🕐 Dom: 8:00 - 14:00</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="border-light opacity-25">
+
+      <div class="row">
+        <div class="col-12 text-center py-3">
+          <small id="footer-copyright">&copy; 2025 Panadería Artesanal · Todos los derechos reservados</small>
+        </div>
       </div>
     </div>
-  </nav>
+  </footer>
 
-  <!-- CONTENIDO -->
-  <section class="container my-5 text-center">
-    <h2>Comparación de imágenes</h2>
-
-    <p>Imagen original (sin optimizar)</p>
-    <img src="../imagenes/pan2.jpg" alt="Imagen original" class="img-fluid mb-4">
-
-    <p>Imagen optimizada (PNG-8)</p>
-    <img src="../imagenes/pan1final.png" alt="Imagen optimizada" class="img-fluid">
-  </section>
-
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="script.js"></script>
+
 </body>
 </html>

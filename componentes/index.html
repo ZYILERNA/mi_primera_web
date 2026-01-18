@@ -12,8 +12,8 @@
   </head>
 <body>
 
-  <header class="header-bg">
-    <div id="selector-idiomas" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
+  <header class="header-bg position-relative">
+    <div id="selector-idiomas" class="position-absolute top-0 end-0 p-3">
       <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
       <button class="btn btn-sm btn-light" data-lang="es">ES</button>
       <button class="btn btn-sm btn-light" data-lang="en">EN</button>
@@ -34,16 +34,16 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
+            <a class="nav-link active" href="index.html" id="nav-inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="herramientas.html">Herramientas</a>
+            <a class="nav-link" href="herramientas.html" id="nav-herramientas">Herramientas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="audio.html">Audio</a>
+            <a class="nav-link" href="audio.html" id="nav-audio">Audio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
+            <a class="nav-link" href="contacto.html" id="nav-contacto">Contacto</a>
           </li>
         </ul>
       </div>
@@ -53,8 +53,8 @@
   <main class="container my-5">
     
     <article class="text-center mb-5">
-      <h2 class="mb-3">Sobre nuestra panadería</h2>
-      <p class="lead">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño.</p>
+      <h2 class="mb-3" id="about-title">Sobre nuestra panadería</h2>
+      <p class="lead" id="about-desc">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño.</p>
     </article>
 
     <div class="imagen-destacada mb-5 text-center">
@@ -73,8 +73,8 @@
         <div class="card h-100">
           <img src="../imagenes/pan1.jpg" class="card-img-top" alt="Pan tradicional" loading="lazy">
           <div class="card-body text-center">
-            <h3 class="card-title h5">Pan Tradicional</h3>
-            <p class="card-text">Crujiente por fuera, esponjoso por dentro.</p>
+            <h3 class="card-title h5" id="card1-title">Pan Tradicional</h3>
+            <p class="card-text" id="card1-desc">Crujiente por fuera, esponjoso por dentro.</p>
           </div>
         </div>
       </div>
@@ -83,8 +83,8 @@
         <div class="card h-100">
           <img src="../imagenes/pasteles.jpg" class="card-img-top" alt="Pasteles" loading="lazy">
           <div class="card-body text-center">
-            <h3 class="card-title h5">Pasteles</h3>
-            <p class="card-text">Dulces artesanales para cada ocasión.</p>
+            <h3 class="card-title h5" id="card2-title">Pasteles</h3>
+            <p class="card-text" id="card2-desc">Dulces artesanales para cada ocasión.</p>
           </div>
         </div>
       </div>
@@ -93,8 +93,8 @@
         <div class="card h-100">
           <img src="../imagenes/cafe.jpg" class="card-img-top" alt="Café" loading="lazy">
           <div class="card-body text-center">
-            <h3 class="card-title h5">Café & Desayunos</h3>
-            <p class="card-text">Acompaña tu pan con un café recién hecho.</p>
+            <h3 class="card-title h5" id="card3-title">Café & Desayunos</h3>
+            <p class="card-text" id="card3-desc">Acompaña tu pan con un café recién hecho.</p>
           </div>
         </div>
       </div>
@@ -103,8 +103,8 @@
         <div class="card h-100">
           <img src="../imagenes/croissants.jpg" class="card-img-top" alt="Bollería" loading="lazy">
           <div class="card-body text-center">
-            <h3 class="card-title h5">Bollería</h3>
-            <p class="card-text">Croissants, napolitanas y mucho más.</p>
+            <h3 class="card-title h5" id="card4-title">Bollería</h3>
+            <p class="card-text" id="card4-desc">Croissants, napolitanas y mucho más.</p>
           </div>
         </div>
       </div>
@@ -116,30 +116,47 @@
   <footer class="footer-custom">
     <div class="container">
       <div class="row py-4">
+        
         <div class="col-12 col-md-4 mb-4 mb-md-0">
-          <h5 class="fw-bold mb-3">🥖 Panadería Artesanal</h5>
-          <p class="small">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño desde 1995.</p>
+          <h5 class="fw-bold mb-3" id="footer-col1-titulo">🥖 Panadería Artesanal</h5>
+          <p class="small" id="footer-desc">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño desde 1995.</p>
+          <div class="social-links">
+            <a href="#" class="me-3"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#" class="me-3"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+          </div>
         </div>
+
         <div class="col-12 col-md-4 mb-4 mb-md-0">
-          <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+          <h5 class="fw-bold mb-3" id="footer-enlaces-titulo">Enlaces Rápidos</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="footer-link">🏠 Inicio</a></li>
-            <li class="mb-2"><a href="herramientas.html" class="footer-link">🔧 Herramientas</a></li>
-            <li class="mb-2"><a href="contacto.html" class="footer-link">📧 Contacto</a></li>
+            <li class="mb-2"><a href="index.html" class="footer-link" id="footer-link-inicio">🏠 Inicio</a></li>
+            <li class="mb-2"><a href="herramientas.html" class="footer-link" id="footer-link-herramientas">🔧 Herramientas</a></li>
+            <li class="mb-2"><a href="audio.html" class="footer-link" id="footer-link-audio">🎵 Audio</a></li>
+            <li class="mb-2"><a href="contacto.html" class="footer-link" id="footer-link-contacto">📧 Contacto</a></li>
+            <li class="mb-2"><a href="#" class="footer-link" id="footer-menu">📋 Menú del día</a></li>
+            <li class="mb-2"><a href="#" class="footer-link" id="footer-encargos">🎂 Encargos especiales</a></li>
           </ul>
         </div>
+
         <div class="col-12 col-md-4">
-          <h5 class="fw-bold mb-3">Contacto</h5>
+          <h5 class="fw-bold mb-3" id="footer-contacto-titulo">Contacto</h5>
           <ul class="list-unstyled small">
-            <li class="mb-2">📍 Calle del Pan, 12 – Madrid</li>
+            <li class="mb-2" id="footer-direccion">📍 Calle del Pan, 12 – Madrid</li>
             <li class="mb-2">📞 912 345 678</li>
+            <li class="mb-2">✉️ contacto@panaderiaartesanal.com</li>
+            <li class="mb-2">🕐 Lun-Sáb: 7:00 - 20:00</li>
+            <li class="mb-2">🕐 Dom: 8:00 - 14:00</li>
           </ul>
         </div>
+
       </div>
+
       <hr class="border-light opacity-25">
+
       <div class="row">
         <div class="col-12 text-center py-3">
-          <small>&copy; 2025 Panadería Artesanal · Todos los derechos reservados</small>
+          <small id="footer-copyright">&copy; 2025 Panadería Artesanal · Todos los derechos reservados</small>
         </div>
       </div>
     </div>
