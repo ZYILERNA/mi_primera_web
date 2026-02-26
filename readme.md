@@ -26,7 +26,7 @@ Para cumplir con los estándares de la práctica, se han integrado:
 
 ## Misiones Completadas (Desglose Técnico)
 
-### 1. Selección de Elementos 🔍
+### 1. Selección de Elementos
 Se demuestra el dominio de selectores para manipular el diseño sin tocar el archivo CSS:
 * **Etiqueta (`h2`, `li`):** Aplicación de bordes dinámicos y estilos de fuente corporativos.
 * **Clase (`.card`):** Generación de sombras (`box-shadow`) y bordes suaves para un look moderno.
