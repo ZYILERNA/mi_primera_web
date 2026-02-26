@@ -10,10 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../style.css"> 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   </head>
 <body>
 
-
+<!-- Selección por etiqueta HTML (p. ej. $(&quot;h2&quot;), $(&quot;li&quot;)) con cambio visual
+visible  -->
 <header class="header-bg position-relative">
   <div id="selector-idiomas" class="position-absolute top-0 end-0 p-3">
     <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
@@ -31,8 +33,6 @@
     <p id="mensaje-bienvenida" class="lead">El sabor de lo hecho a mano 🥖</p>
   </div>
 </header>
-
-
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
@@ -60,6 +60,52 @@
       </div>
     </div>
   </nav>
+<!-- Buscador de pan -->
+<input type="text" id="buscador-pan" class="form-control mb-3" placeholder="Busca tu pan favorito...">
+<div id="feedback-teclado" class="text-muted small"></div>
+<!-- Carrito de compras -->
+
+  <div class="card h-100">
+  <img src="../imagenes/pan1.jpg" class="card-img-top" alt="Pan tradicional">
+  <div class="card-body text-center">
+    <h3 class="card-title h5">Pan Tradicional</h3>
+    <p class="card-text">Crujiente por fuera, esponjoso por dentro.</p>
+    <button class="btn btn-sm btn-outline-warning btn-agregar" data-nombre="Pan Tradicional">
+       Añadir al pedido 🥖
+    </button>
+  </div>
+</div>
+
+<section id="seccion-carrito" class="mt-5 p-4 border rounded bg-light">
+  <h4 class="text-center">🛒 Tu Pedido Artesanal</h4>
+  <ul id="lista-carrito" class="list-group list-group-flush">
+    </ul>
+  <p id="carrito-vacio" class="text-muted text-center mt-3">El carrito está vacío</p>
+</section>
+
+<!-- Fin Carrito de compras -->
+ <!--- Banner de oferta --->
+ <div id="banner-oferta" class="text-center p-4 mb-4" style="background-color: #fce4ec; border: 2px solid #d35400; border-radius: 15px; display: none;">
+  <h4 style="color: #d35400;">🥖 ¡Oferta del día! 🥖</h4>
+  <p>2x1 en Cruasanes artesanales antes de las 10:00h</p>
+  <button id="cerrar-oferta" class="btn btn-sm btn-dark">Entendido</button>
+</div>
+<!-- Fin Banner de oferta -->
+ <!-- Horarios de horneado-->
+<div class="text-center mt-4">
+  <button id="btn-animar-horarios" class="btn btn-warning shadow">Ver Horarios de Horneado</button>
+  <div id="info-horarios" class="mt-3 p-3 bg-white shadow-sm rounded" style="display: none; overflow: hidden;">
+    <p>🍞 Pan Blanco: 07:00h</p>
+    <p>🥐 Bollería: 08:30h</p>
+    <p>🥖 Baguettes: 10:00h</p>
+  </div>
+</div>
+<!-- Fin Horarios de horneado-->
+
+<div class="mt-3">
+  <label for="fecha-recogida" class="form-label">¿Qué día vendrás a por tu pan?</label>
+  <input type="text" id="fecha-recogida" class="form-control" placeholder="Selecciona una fecha">
+</div>
 
   <main class="container my-5">
     
@@ -190,7 +236,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <script src="script.js"></script>
 
+  <script src="jquery.js"></script>
 </body>
 </html>

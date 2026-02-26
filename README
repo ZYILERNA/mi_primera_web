@@ -7,3 +7,58 @@ Los estilos base están pensados para pantallas pequeñas, y usamos media querie
 1. **Menú hamburguesa en móviles:** El menú de navegación se oculta tras un icono ☰ y se despliega al hacer clic.
 2. **Diseño flexible de columnas:** En escritorio, la sección de contacto muestra el formulario y la información uno al lado del otro; en móvil, en una sola columna.
 3. **Reorganización y ajuste visual:** Las tarjetas de producto se ajustan de 100% ancho en móvil a 45% o 30% en tablet y escritorio, manteniendo coherencia y legibilidad.
+
+
+
+# Panadería Artesanal - Práctica de Interactividad Web (jQuery)
+
+Este proyecto implementa interactividad avanzada sobre el sitio web de la Panadería Artesanal utilizando la biblioteca **jQuery** y componentes de **jQuery UI**. Se ha priorizado la separación de capas (HTML/JS), el rendimiento mediante delegación de eventos y la experiencia de usuario (UX) con animaciones fluidas.
+
+---
+
+## Tecnologías e Integración
+Para cumplir con los estándares de la práctica, se han integrado:
+* **Librerías:** jQuery 3.7.1 y jQuery UI 1.13.2 (vía CDN).
+* **Estilos UI:** Tema "base" de jQuery UI para el Datepicker.
+* **Separación de Lógica:** Todo el código reside exclusivamente en `jquery.js`.
+
+---
+
+## Misiones Completadas (Desglose Técnico)
+
+### 1. Selección de Elementos 🔍
+Se demuestra el dominio de selectores para manipular el diseño sin tocar el archivo CSS:
+* **Etiqueta (`h2`, `li`):** Aplicación de bordes dinámicos y estilos de fuente corporativos.
+* **Clase (`.card`):** Generación de sombras (`box-shadow`) y bordes suaves para un look moderno.
+* **ID (`#titulo-principal`):** Resalte de marca mediante `text-shadow` y escalado.
+* **Selector Avanzado (`.nav-link:odd`):** Estilización diferencial de los elementos impares del menú para mejorar la navegación visual.
+
+### 2. Gestión del DOM y Carrito    
+Se ha creado un **Carrito de Pedidos dinámico**:
+* **Adición:** Uso de `.append()` para insertar elementos `<li>` generados en tiempo real con datos extraídos de atributos `data-nombre`.
+* **Eliminación:** Uso de `.remove()` con transiciones de salida.
+* **Evento Delegado (Bonus):** Se ha utilizado `$("#lista-carrito").on("click", ".btn-eliminar", ...)` para que los productos añadidos dinámicamente puedan ser borrados correctamente del DOM.
+
+### 3. Gestión de Eventos `.on()` 
+* **Ratón:** Captura de `mouseenter` y `mouseleave` en las tarjetas de pan para crear un efecto de "zoom" interactivo usando `$(this)`.
+* **Teclado:** Uso de `keyup` en el buscador para inyectar feedback inmediato en el DOM (`#feedback-teclado`).
+* **Formulario:** Intercepción de `submit` con `.preventDefault()` para gestionar el envío de forma asíncrona y mostrar una confirmación visual.
+
+### 4. Animaciones y Transiciones 
+* **Fundidos:** El banner de ofertas utiliza `.fadeIn(1000)` tras un retardo controlado.
+* **Deslizamientos:** Implementación de `.slideToggle(600)` para el panel de horarios, optimizando el espacio vertical.
+* **Animación Custom:** Uso de `.animate()` encadenado para modificar `fontSize`, `letterSpacing` y `opacity` de forma secuencial en el título principal.
+
+### 5. Plug-in jQuery UI (Datepicker) 
+Integración de un selector de fechas profesional para la recogida de pan:
+* **Configuración:** Idioma localizado, formato de fecha `dd/mm/yy` y restricción de días pasados (`minDate: 0`).
+* **Feedback:** Uso de la función callback `onSelect` para notificar al usuario su elección.
+
+---
+
+## Archivos del Proyecto
+* `jquery.html`: Estructura semántica con contenedores preparados para jQuery.
+* `jquery.js`: Script principal con comentarios de cabecera y organización por bloques.
+* `style.css`: Estilos base del proyecto.
+
+---
