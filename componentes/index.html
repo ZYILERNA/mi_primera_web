@@ -10,11 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../style.css"> 
+  <!-- Practica 13 CSS & CDNs -->
+  <link rel="stylesheet" href="css/interactividad_practica13.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   </head>
 <body>
 
 
 <header class="header-bg position-relative">
+  <!-- P13: Canvas Fondo Interactivo -->
+  <canvas id="p13-bg-canvas"></canvas>
+
   <div id="selector-idiomas" class="position-absolute top-0 end-0 p-3">
     <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
     <button class="btn btn-sm btn-light" data-lang="es">ES</button>
@@ -53,8 +60,8 @@
           <li class="nav-item">
             <a class="nav-link" href="contacto.html" id="nav-contacto">Contacto</a>
           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="jquery.html" id="nav-contacto">jQuery</a>
+          <li class="nav-item">
+            <a class="nav-link" href="jquery.html" id="nav-jquery">jQuery</a>
           </li>
         </ul>
       </div>
@@ -136,7 +143,25 @@
         Tu navegador no soporta la reproducción de vídeo. 
         <a href="../video/panmp4.mp4">Descarga el vídeo aquí</a>.
     </video>
-</section>
+    </section>
+
+    <!-- P13: Sección del Gráfico Animado -->
+    <section id="p13-chart-section" class="p13-chart-section">
+      <div class="text-center">
+        <h2>📊 Ventas Semanales</h2>
+        <p>Evolución de nuestras ventas por categoría de producto</p>
+      </div>
+      
+      <div class="p13-chart-wrapper">
+        <canvas id="p13-sales-chart"></canvas>
+      </div>
+
+      <div class="p13-btn-row">
+        <button id="p13-btn-toggle" class="p13-btn p13-btn--secondary">📈 Cambiar a Líneas</button>
+        <button id="p13-btn-refresh" class="p13-btn">🔄 Actualizar datos</button>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer-custom">
@@ -191,6 +216,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <script src="script.js"></script>
+  <!-- Practica 13 JS -->
+  <script src="js/interactividad_practica13.js"></script>
 
 </body>
 </html>

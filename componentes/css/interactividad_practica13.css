@@ -1,0 +1,137 @@
+/* =====================================================
+   PRÁCTICA 13 – Estilos de interactividad
+   Todos los selectores usan prefijo .p13- para
+   garantizar que no se modifiquen estilos previos.
+   ===================================================== */
+
+/* ── Variables de paleta (reutiliza la del proyecto) ── */
+.p13-root {
+  --p13-amber:    #d97706;
+  --p13-amber-dk: #b45309;
+  --p13-brown:    #78350f;
+  --p13-gold:     #fbbf24;
+  --p13-cream:    #fffdf7;
+  --p13-shadow:   rgba(217, 119, 6, 0.35);
+}
+
+/* ═══════════════════════════════════════════════════
+   BLOQUE C – Canvas overlay en el header
+   ═══════════════════════════════════════════════════ */
+#p13-bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;   /* las partículas no bloquean clics */
+  z-index: 0;             /* debajo del contenido del header  */
+}
+
+/* Aseguramos que el resto del header quede por encima */
+.header-bg > *:not(#p13-bg-canvas) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════
+   BLOQUE A – Sección del gráfico
+   ═══════════════════════════════════════════════════ */
+.p13-chart-section {
+  background: #fff9f0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  border-top: 4px solid #d97706;
+}
+
+.p13-chart-section h2 {
+  color: #78350f;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.p13-chart-section p {
+  color: #92400e;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Contenedor responsive con altura fija para Chart.js */
+.p13-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  max-width: 860px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Fila de botones de control */
+.p13-btn-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── Botones temáticos ─── */
+.p13-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #d97706;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+  user-select: none;
+}
+
+.p13-btn:hover {
+  background: #b45309;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.45);
+}
+
+.p13-btn:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Variante secundaria */
+.p13-btn--secondary {
+  background: #78350f;
+}
+
+.p13-btn--secondary:hover {
+  background: #92400e;
+}
+
+/* ═══════════════════════════════════════════════════
+   BLOQUE B – Micro-interacciones (soporte CSS)
+   ═══════════════════════════════════════════════════ */
+
+/* Asegura que las tarjetas tengan overflow visible
+   para que el z-index de Anime.js funcione bien  */
+.p13-anim-ready {
+  will-change: transform, opacity;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 576px) {
+  .p13-chart-wrapper {
+    height: 240px;
+  }
+
+  .p13-chart-section {
+    padding: 1.25rem 1rem;
+  }
+}
