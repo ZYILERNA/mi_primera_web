@@ -62,3 +62,61 @@ Integración de un selector de fechas profesional para la recogida de pan:
 * `style.css`: Estilos base del proyecto.
 
 ---
+
+# Panadería Artesanal - Práctica 13: Integración de Contenidos Interactivos
+
+Módulo DAW M09 · Unidad 4 — Charts, Anime.js y Canvas
+
+---
+
+## Selectores HTML utilizados como ancla
+
+Los nuevos componentes se insertan sobre los siguientes elementos del HTML original:
+
+| Selector | Propósito |
+|---|---|
+| `header.header-bg` | Contiene el canvas de partículas interactivo (fondo del header) |
+| `#p13-bg-canvas` | Elemento `<canvas>` para el fondo animado con partículas |
+| `#p13-chart-section` | Sección que envuelve el gráfico de ventas semanales |
+| `#p13-sales-chart` | Canvas del gráfico Chart.js |
+| `#p13-btn-toggle` | Botón para cambiar entre gráfico de barras y de líneas |
+| `#p13-btn-refresh` | Botón para regenerar datos aleatorios en el gráfico |
+| `.card` | Tarjetas de producto sobre las que se aplica el staggering de Anime.js |
+
+---
+
+## Librerías externas (CDN)
+
+| Librería | Versión | CDN |
+|---|---|---|
+| **Chart.js** | 4.4.3 | `https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js` |
+| **Anime.js** | 3.2.2 | `https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js` |
+
+---
+
+## Resumen por bloques
+
+### Bloque A – Visualización Dinámica (Chart.js)
+Gráfico de barras/líneas con datos de ventas semanales por categoría (Pan, Pasteles, Café, Bollería). Usa la paleta ámbar/marrón del proyecto. Dos botones permiten cambiar el tipo de gráfico y regenerar datos.
+
+### Bloque B – Animación de Interfaz (Anime.js)
+- **Staggering:** Las 4 tarjetas de producto aparecen escalonadas al cargar la página (translateY + opacity).
+- **Micro-interacciones hover:** Las tarjetas se escalan y adquieren sombra dorada al pasar el ratón.
+- **Micro-interacciones press:** Los botones `.p13-btn` se comprimen al hacer clic y recuperan su escala con efecto elástico.
+
+### Bloque C – Canvas 2D (requestAnimationFrame)
+60 partículas flotantes en el header que ascienden lentamente. Al mover el ratón sobre el header, las partículas cercanas se atraen hacia el cursor. Efecto fade-in/out basado en el ciclo de vida de cada partícula.
+
+### Bloque D – Arquitectura
+- Todo el código JS está encapsulado en una **IIFE** (`(function(){ ... })()`), sin variables globales.
+- Todos los selectores CSS usan el prefijo `.p13-` o el ID `#p13-` para evitar colisiones.
+- Las librerías se cargan vía CDN antes de los scripts propios.
+
+---
+
+## Archivos del Proyecto (Práctica 13)
+* `componentes/index.html`: Página principal con los anclajes HTML para los nuevos componentes.
+* `componentes/js/interactividad_practica13.js`: Todo el código JS nuevo (IIFE con módulos A, B, C, D).
+* `componentes/css/interactividad_practica13.css`: Estilos exclusivos de la práctica 13 (prefijo `.p13-`).
+
+---
