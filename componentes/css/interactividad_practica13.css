@@ -15,22 +15,48 @@
 }
 
 /* ═══════════════════════════════════════════════════
-   BLOQUE C – Canvas overlay en el header
+   BLOQUE C – Canvas widget independiente (bajo el gráfico)
    ═══════════════════════════════════════════════════ */
+.p13-canvas-widget {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #78350f 0%, #92400e 60%, #b45309 100%);
+  box-shadow: 0 4px 24px rgba(120, 53, 15, 0.35);
+  cursor: crosshair;
+}
+
+.p13-canvas-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(254, 243, 199, 0.30);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  margin: 0;
+  z-index: 0;
+}
+
 #p13-bg-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;   /* las partículas no bloquean clics */
-  z-index: 0;             /* debajo del contenido del header  */
+  display: block;
 }
 
-/* Aseguramos que el resto del header quede por encima */
-.header-bg > *:not(#p13-bg-canvas) {
-  position: relative;
-  z-index: 1;
+@media (max-width: 576px) {
+  .p13-canvas-widget {
+    height: 160px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════

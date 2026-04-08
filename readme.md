@@ -75,9 +75,9 @@ Los nuevos componentes se insertan sobre los siguientes elementos del HTML origi
 
 | Selector | Propósito |
 |---|---|
-| `header.header-bg` | Contiene el canvas de partículas interactivo (fondo del header) |
-| `#p13-bg-canvas` | Elemento `<canvas>` para el fondo animado con partículas |
 | `#p13-chart-section` | Sección que envuelve el gráfico de ventas semanales |
+| `#p13-canvas-widget` | Contenedor del widget de partículas interactivo (justo debajo del gráfico) |
+| `#p13-bg-canvas` | Elemento `<canvas>` para la animación de partículas reactivas al cursor |
 | `#p13-sales-chart` | Canvas del gráfico Chart.js |
 | `#p13-btn-toggle` | Botón para cambiar entre gráfico de barras y de líneas |
 | `#p13-btn-refresh` | Botón para regenerar datos aleatorios en el gráfico |
@@ -105,7 +105,7 @@ Gráfico de barras/líneas con datos de ventas semanales por categoría (Pan, Pa
 - **Micro-interacciones press:** Los botones `.p13-btn` se comprimen al hacer clic y recuperan su escala con efecto elástico.
 
 ### Bloque C – Canvas 2D (requestAnimationFrame)
-60 partículas flotantes en el header que ascienden lentamente. Al mover el ratón sobre el header, las partículas cercanas se atraen hacia el cursor. Efecto fade-in/out basado en el ciclo de vida de cada partícula.
+Widget independiente situado justo debajo del gráfico de ventas (`#p13-canvas-widget`). 60 partículas flotantes ascienden sobre un fondo marrón temático. Al mover el ratón dentro del widget, las partículas cercanas se atraen hacia el cursor. Efecto fade-in/out basado en el ciclo de vida de cada partícula.
 
 ### Bloque D – Arquitectura
 - Todo el código JS está encapsulado en una **IIFE** (`(function(){ ... })()`), sin variables globales.

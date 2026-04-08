@@ -242,9 +242,9 @@
     let W, H;
 
     function resize() {
-      const header = canvas.parentElement;
-      W = canvas.width  = header.offsetWidth;
-      H = canvas.height = header.offsetHeight;
+      const wrapper = canvas.parentElement;
+      W = canvas.width  = wrapper.offsetWidth;
+      H = canvas.height = wrapper.offsetHeight;
     }
 
     function draw() {
@@ -306,14 +306,14 @@
         particles.push(p);
       }
 
-      /* Seguimiento del ratón sobre el header */
-      const header = canvas.parentElement;
-      header.addEventListener('mousemove', function (e) {
-        const rect = header.getBoundingClientRect();
+      /* Seguimiento del ratón sobre el widget */
+      const wrapper = canvas.parentElement;
+      wrapper.addEventListener('mousemove', function (e) {
+        const rect = wrapper.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
       });
-      header.addEventListener('mouseleave', function () {
+      wrapper.addEventListener('mouseleave', function () {
         mouse.x = -999;
         mouse.y = -999;
       });
