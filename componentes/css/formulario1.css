@@ -1,0 +1,141 @@
+/* ===================== PRÁCTICA 12: FORMULARIOS I ===================== */
+
+/* Sección principal del formulario */
+.p12-section {
+    padding: 60px 20px;
+    background: #fffdf7;
+}
+
+.p12-section h2 {
+    color: #78350f;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.p12-section .p12-subtitle {
+    color: #92400e;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Fieldset con fondo azure y bordes redondeados */
+#form-inscripcion fieldset {
+    background: azure;
+    border: 2px solid #bae6fd;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#form-inscripcion legend {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0369a1;
+    padding: 0 0.5rem;
+    background: azure;
+    border-radius: 6px;
+}
+
+/* Labels en bloque independiente */
+#form-inscripcion label {
+    display: block;
+    font-weight: 600;
+    color: #4a3f35;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Inputs, select y textarea con ancho cómodo */
+#form-inscripcion input[type="text"],
+#form-inscripcion input[type="email"],
+#form-inscripcion input[type="password"],
+#form-inscripcion select,
+#form-inscripcion textarea {
+    width: 60%;
+    padding: 0.5rem 0.75rem;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.97rem;
+    background: #fff;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    display: block;
+}
+
+#form-inscripcion input[type="text"]:focus,
+#form-inscripcion input[type="email"]:focus,
+#form-inscripcion input[type="password"]:focus,
+#form-inscripcion select:focus,
+#form-inscripcion textarea:focus {
+    border-color: #d97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+    outline: none;
+}
+
+#form-inscripcion textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botón de envío */
+#form-inscripcion .p12-btn-submit {
+    margin-top: 1.5rem;
+    padding: 0.6rem 2rem;
+    background: #d97706;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.15s;
+}
+
+#form-inscripcion .p12-btn-submit:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+}
+
+#form-inscripcion .p12-btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Mensaje de éxito inline */
+#p12-msg-ok {
+    display: none;
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background: #d1fae5;
+    border: 1.5px solid #6ee7b7;
+    border-radius: 8px;
+    color: #065f46;
+    font-weight: 600;
+}
+
+/* Nota informativa al pie */
+.p12-notice {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    background: #fef9c3;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #78350f;
+}
+
+/* Responsive: inputs full width en móvil */
+@media (max-width: 600px) {
+    #form-inscripcion input[type="text"],
+    #form-inscripcion input[type="email"],
+    #form-inscripcion input[type="password"],
+    #form-inscripcion select,
+    #form-inscripcion textarea {
+        width: 100%;
+    }
+
+    #form-inscripcion fieldset {
+        padding: 1rem 1rem;
+    }
+}
+/* ====================================================================== */

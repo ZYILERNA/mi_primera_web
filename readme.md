@@ -120,3 +120,69 @@ Widget independiente situado justo debajo del gráfico de ventas (`#p13-canvas-w
 * `componentes/css/interactividad_practica13.css`: Estilos exclusivos de la práctica 13 (prefijo `.p13-`).
 
 ---
+
+# Panadería Artesanal - Práctica 12: Formularios I
+
+Módulo DAW · Formularios HTML5, diseño CSS y control con JavaScript.
+
+---
+
+## Objetivo
+
+Construir un formulario de inscripción funcional y atractivo que demuestre el dominio de la estructura HTML5, el diseño con CSS y la lógica de interceptación con JavaScript.
+
+---
+
+## Estructura y Semántica
+
+- Etiqueta `<form>` con `id="form-inscripcion"`, `action="procesar.php"` y `method="POST"`.
+- Los campos de "Datos Personales" se agrupan con `<fieldset>` y `<legend>`.
+- Cada campo tiene su propia `<label>` asociada mediante `for`/`id` para mejorar la accesibilidad.
+
+---
+
+## Tipos de Datos y Validación HTML5
+
+| Campo | Tipo / Elemento | Atributos destacados |
+|---|---|---|
+| Nombre | `<input type="text">` | `required`, `placeholder`, `autocomplete` |
+| Email | `<input type="email">` | `required`, `placeholder` |
+| Contraseña | `<input type="password">` | `required`, `placeholder` |
+| Lenguaje favorito | `<select>` | opciones: HTML, JavaScript, Python |
+| Motivación | `<textarea>` | `maxlength="300"`, `rows="5"`, `placeholder` |
+| Envío | `<button type="submit">` | activa la acción del formulario |
+
+---
+
+## Diseño y Experiencia de Usuario (CSS)
+
+- `label { display: block }` — las etiquetas se muestran en bloques independientes para lectura de arriba a abajo.
+- `placeholder` en todos los campos de texto para dar pistas sobre qué escribir.
+- Fondo `azure` en el `<fieldset>` con borde redondeado.
+- `width: 60%` en inputs, select y textarea (100% en móviles < 600 px).
+- Foco resaltado con borde y sombra en color ámbar del proyecto.
+- Botón de envío con color corporativo y efecto hover/active.
+- Mensaje de éxito inline (`#p12-msg-ok`) que aparece tras una validación correcta.
+- Nota de seguridad al pie del formulario.
+
+---
+
+## Lógica y Control con JavaScript
+
+- `addEventListener('submit', ...)` intercepta el envío del formulario.
+- Si la contraseña tiene **menos de 8 caracteres**: `alert()` de error + `event.preventDefault()` detiene el envío y enfoca el campo.
+- Si todo es correcto: mensaje de bienvenida en `console.log` con nombre, email, lenguaje y motivación; se muestra el mensaje de éxito en pantalla y se reinicia el formulario.
+
+> ⚠️ Aunque los datos se validan en el navegador con JavaScript, en un entorno real siempre deben volver a validarse en el servidor para garantizar la seguridad total.
+
+---
+
+## Archivos del Proyecto (Práctica 12)
+
+* `componentes/formulario1.html`: Página con el formulario de inscripción y navbar actualizado.
+* `componentes/css/formulario1.css`: Estilos exclusivos del formulario (prefijo `#form-inscripcion`, `.p12-`).
+* `componentes/js/formulario1.js`: Lógica de validación y mensajes de consola.
+
+La entrada **"Formulario 1"** se ha añadido al navbar de todas las páginas existentes del proyecto.
+
+---

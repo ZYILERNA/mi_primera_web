@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario 1 - Panadería Artesanal</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../imagenes/LogoPan.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="css/formulario1.css">
+</head>
+<body>
+
+<header class="header-bg position-relative">
+  <div class="container text-center pt-5">
+    <div class="header">
+      <img src="../imagenes/LogoPan.png" alt="Logo del sitio" class="logo">
+    </div>
+    <h1 class="display-3">Panadería Artesanal</h1>
+    <p class="lead">El sabor de lo hecho a mano 🥖</p>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" id="nav-inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="herramientas.html" id="nav-herramientas">Herramientas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="audio.html" id="nav-audio">Audio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html" id="nav-contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="jquery.html" id="nav-jquery">jQuery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="formulario1.html" id="nav-formulario1">Formulario 1</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+
+  <section class="p12-section">
+    <h2>Práctica 12: Formularios I</h2>
+    <p class="p12-subtitle">Formulario de inscripción — estructura semántica, validación HTML5 y control con JavaScript.</p>
+
+    <!-- FORMULARIO PRINCIPAL -->
+    <form id="form-inscripcion" action="procesar.php" method="POST" novalidate>
+
+      <!-- Fieldset: Datos Personales -->
+      <fieldset>
+        <legend>Datos Personales</legend>
+
+        <!-- Nombre -->
+        <label for="p12-nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="p12-nombre"
+          name="nombre"
+          placeholder="Ej. María García"
+          required
+          autocomplete="name"
+        >
+
+        <!-- Email -->
+        <label for="p12-email">Correo electrónico</label>
+        <input
+          type="email"
+          id="p12-email"
+          name="email"
+          placeholder="Ej. maria@correo.com"
+          required
+          autocomplete="email"
+        >
+
+        <!-- Contraseña -->
+        <label for="p12-password">Contraseña</label>
+        <input
+          type="password"
+          id="p12-password"
+          name="password"
+          placeholder="Mínimo 8 caracteres"
+          required
+          autocomplete="new-password"
+        >
+
+        <!-- Lenguaje favorito -->
+        <label for="p12-lenguaje">Lenguaje favorito</label>
+        <select id="p12-lenguaje" name="lenguaje" required>
+          <option value="" disabled selected>-- Elige un lenguaje --</option>
+          <option value="HTML">HTML</option>
+          <option value="JS">JavaScript</option>
+          <option value="Python">Python</option>
+        </select>
+
+        <!-- Motivación -->
+        <label for="p12-motivacion">¿Por qué quieres inscribirte?</label>
+        <textarea
+          id="p12-motivacion"
+          name="motivacion"
+          placeholder="Cuéntanos tu motivación aquí..."
+          maxlength="300"
+          rows="5"
+        ></textarea>
+
+      </fieldset>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="p12-btn-submit">Enviar inscripción</button>
+
+      <!-- Mensaje de éxito (oculto hasta validación JS correcta) -->
+      <p id="p12-msg-ok" role="status" aria-live="polite"></p>
+
+    </form>
+
+    <!-- Nota informativa sobre seguridad -->
+    <div class="p12-notice">
+      ⚠️ <strong>Nota de seguridad:</strong> aunque los datos se validan en el navegador con JavaScript,
+      en un entorno real siempre deben volver a validarse en el servidor para garantizar la seguridad total.
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row py-4">
+
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold mb-3">🥖 Panadería Artesanal</h5>
+        <p class="small">Elaboramos pan y repostería con ingredientes frescos, tradición y mucho cariño desde 1995.</p>
+        <div class="social-links">
+          <a href="#" class="me-3">Facebook</a>
+          <a href="#" class="me-3">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="index.html" class="footer-link">🏠 Inicio</a></li>
+          <li class="mb-2"><a href="herramientas.html" class="footer-link">🔧 Herramientas</a></li>
+          <li class="mb-2"><a href="audio.html" class="footer-link">🎵 Audio</a></li>
+          <li class="mb-2"><a href="contacto.html" class="footer-link">📧 Contacto</a></li>
+          <li class="mb-2"><a href="jquery.html" class="footer-link">⚡ jQuery</a></li>
+          <li class="mb-2"><a href="formulario1.html" class="footer-link">📋 Formulario 1</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">Contacto</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2">📍 Calle del Pan, 12 – Madrid</li>
+          <li class="mb-2">📞 912 345 678</li>
+          <li class="mb-2">✉️ contacto@panaderiaartesanal.com</li>
+          <li class="mb-2">🕐 Lun-Sáb: 7:00 - 20:00</li>
+          <li class="mb-2">🕐 Dom: 8:00 - 14:00</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-light opacity-25">
+
+    <div class="row">
+      <div class="col-12 text-center py-3">
+        <small>&copy; 2025 Panadería Artesanal · Todos los derechos reservados</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/formulario1.js"></script>
+
+</body>
+</html>
